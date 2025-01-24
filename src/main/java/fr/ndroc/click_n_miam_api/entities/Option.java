@@ -2,13 +2,12 @@ package fr.ndroc.click_n_miam_api.entities;
 
 import jakarta.persistence.*;
 
-
 @Entity
-@Table(name="option")
+@Table(name="options")
 public class Option {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String description;
