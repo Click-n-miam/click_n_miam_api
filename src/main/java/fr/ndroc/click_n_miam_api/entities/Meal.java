@@ -2,7 +2,7 @@ package fr.ndroc.click_n_miam_api.entities;
 
 import fr.ndroc.click_n_miam_api.enums.MealType;
 import jakarta.persistence.*;
-import java.lang.Enum;
+import java.awt.*;
 
 @Entity
 @Table(name = "meals")
@@ -17,7 +17,7 @@ public class Meal {
     private String image;
 
     @Enumerated(EnumType.STRING)
-    private MealType mealType;
+    private MealType type;
 
     public Meal() {
     }

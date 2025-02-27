@@ -1,9 +1,9 @@
 package fr.ndroc.click_n_miam_api.interfaces;
 
 import fr.ndroc.click_n_miam_api.entities.MealOption;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MealOptionRepository extends CrudRepository<MealOption, Integer> {
+public interface MealOptionRepository extends JpaRepository<MealOption, Integer> {
 }
