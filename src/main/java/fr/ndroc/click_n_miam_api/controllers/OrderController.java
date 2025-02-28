@@ -21,9 +21,9 @@ public class OrderController {
         return (List<Order>) orderRepository.findAll();
     }
 
-    @GetMapping("/by-email")
-    public List<Order> getOrdersByEmail(String email) {
-        return (List<Order>) orderRepository.findAllByEmail(email);
-    }
+//    @GetMapping("/by-email")
+//    public List<Order> getOrdersByEmail(String email) {
+//        return (List<Order>) orderRepository.findByEmail(email);
+//    }
 
 }

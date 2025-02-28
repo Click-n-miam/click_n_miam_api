@@ -1,6 +1,7 @@
 package fr.ndroc.click_n_miam_api.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Embeddable;
+
 import java.io.Serializable;
 
 @Embeddable

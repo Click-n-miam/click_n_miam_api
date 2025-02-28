@@ -3,19 +3,21 @@ package fr.ndroc.click_n_miam_api.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "meal_options")
-public class MealOption {
+@Table(name = "menu_options")
+public class MenuOption {
 
-    @EmbeddedId
-    private MealOptionId id;
-
-    @ManyToOne
-    @MapsId("mealId") // Associe mealId à Meal
-    @JoinColumn(name = "meal_id")
-    private Meal meal;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    // @EmbeddedId
+    private Integer id;
 
     @ManyToOne
-    @MapsId("optionId") // Associe optionId à Option
+    // @MapsId("menuId")
+    @JoinColumn(name = "menu_id")
+    private Menu menu;
+
+    @ManyToOne
+    // @MapsId("optionId")
     @JoinColumn(name = "option_id")
     private Option option;
 
@@ -23,7 +25,7 @@ public class MealOption {
     public String toString() {
         return "Option{" +
                 "id=" + id +
-                ", meal='" + meal +
+                ", menu='" + menu +
                 ", option=" + option +
                 '}';
     }

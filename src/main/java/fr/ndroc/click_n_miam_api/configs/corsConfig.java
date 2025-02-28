@@ -14,7 +14,7 @@ public class corsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:3000") // Remplace par l'URL de ton app en production
+                        .allowedOrigins("http://localhost:3000/history") // Remplace par l'URL de ton app en production
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
