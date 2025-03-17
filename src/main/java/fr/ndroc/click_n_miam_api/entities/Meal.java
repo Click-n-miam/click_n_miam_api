@@ -3,6 +3,7 @@ package fr.ndroc.click_n_miam_api.entities;
 import fr.ndroc.click_n_miam_api.enums.MealType;
 import jakarta.persistence.*;
 
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -16,6 +17,7 @@ public class Meal {
     private String title;
     private String description;
     private String image;
+    private Date proposed_at;
 
     @ManyToMany
     @JoinTable(
@@ -55,6 +57,13 @@ public class Meal {
     }
     public void setIngredients(List<MealIngredient> ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public Date getProposed_at() {
+        return proposed_at;
+    }
+    public void setProposed_at(Date proposed_at) {
+        this.proposed_at = proposed_at;
     }
 
     @Override
