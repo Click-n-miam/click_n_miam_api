@@ -4,7 +4,7 @@ import fr.ndroc.click_n_miam_api.entities.Option;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel = "list-options")
+@RepositoryRestResource(collectionResourceRel = "options")
 public interface OptionRepository extends JpaRepository<Option, Integer> {
 
 //    @RestResource(path = "search-by-name" )

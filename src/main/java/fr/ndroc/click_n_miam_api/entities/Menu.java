@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "menus")
@@ -35,7 +36,7 @@ public class Menu {
             joinColumns = @JoinColumn(name = "menu_id"),
             inverseJoinColumns = @JoinColumn(name = "option_id")
     )
-    private List<MenuOption> options;
+    private Set<Option> options;
 
     public Menu() {
     }
@@ -55,10 +56,10 @@ public class Menu {
     public Meal getDessertMeal() { return dessertMeal; }
     public void setDessertMeal(Meal dessertMeal) { this.dessertMeal = dessertMeal; }
 
-    public List<MenuOption> getOptions() {
+    public Set<Option> getOptions() {
         return options;
     }
-    public void setOptions(List<MenuOption> options) {
+    public void setOptions(Set<Option> options) {
         this.options = options;
     }
 

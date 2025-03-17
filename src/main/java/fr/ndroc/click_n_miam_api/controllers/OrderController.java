@@ -19,9 +19,10 @@ public class OrderController {
     @Autowired
     private OrderRepository orderRepository;
 
-    @GetMapping
+    @GetMapping("/")
     public List<Order> getOrders() {
-        return (List<Order>) orderRepository.findAll();
+
+        return orderRepository.findAll();
     }
 
 //    @GetMapping("/by-email")
