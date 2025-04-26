@@ -8,9 +8,7 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "orders" )
 public interface OrderRepository extends JpaRepository<Order, Integer> {
+
     List<Order> findAllByEmail(String email);
 
 }
-
-//    @RestResource(exported = false, path = "email")
-//    Iterable<Order> findByEmail(String email);

@@ -1,5 +1,6 @@
 package fr.ndroc.click_n_miam_api.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -20,6 +21,7 @@ public class Order {
     private Boolean paid;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Menu> menus;
 
     public Order() {

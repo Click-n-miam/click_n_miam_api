@@ -1,5 +1,6 @@
 package fr.ndroc.click_n_miam_api.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import fr.ndroc.click_n_miam_api.enums.MealType;
 import jakarta.persistence.*;
 
@@ -26,6 +27,7 @@ public class Meal {
             joinColumns = @JoinColumn(name = "meal_id"),
             inverseJoinColumns = @JoinColumn(name = "ingredient_id")
     )
+    @JsonManagedReference
     private Set<Ingredient> ingredients;
 
     @Enumerated(EnumType.STRING)

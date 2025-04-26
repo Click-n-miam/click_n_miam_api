@@ -1,5 +1,6 @@
 package fr.ndroc.click_n_miam_api.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -15,6 +16,7 @@ public class Ingredient {
     private Boolean allergen;
 
     @ManyToMany(mappedBy = "ingredients")
+    @JsonBackReference
     private Set<Meal> meals;
 
     public Ingredient() {

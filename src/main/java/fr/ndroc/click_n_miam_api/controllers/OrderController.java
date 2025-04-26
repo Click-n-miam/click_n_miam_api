@@ -13,30 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/orders")
+@RequestMapping("/orders")
 public class OrderController {
 
     @Autowired
     private OrderRepository orderRepository;
 
-    @GetMapping("/")
-    public List<Order> getOrders() {
-
-        return orderRepository.findAll();
-    }
-
-//    @GetMapping("/by-email")
-//    public List<Order> getOrdersByEmail(String email) {
-//        return (List<Order>) orderRepository.findAllByEmail(email);
-//    }
-
     @GetMapping("/by-email")
-    public ResponseEntity<List<Order>> getOrdersByEmail(@RequestParam String email) {
-        List<Order> orders = orderRepository.findAllByEmail(email);
-        if (orders.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(orders);
+    public List<Order> getOrdersByEmail(String email) {
+        return (List<Order>) orderRepository.findAllByEmail(email);
     }
 
 }
