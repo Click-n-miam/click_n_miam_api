@@ -3,12 +3,10 @@ package fr.ndroc.click_n_miam_api.controllers;
 import fr.ndroc.click_n_miam_api.entities.Order;
 import fr.ndroc.click_n_miam_api.interfaces.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,4 +22,12 @@ public class OrderController {
         return (List<Order>) orderRepository.findAllByEmail(email);
     }
 
+
+    @PostMapping(value = "/send-order", consumes = MediaType.ALL_VALUE)
+    public ResponseEntity<Order> createOrder(@RequestBody Order order) {
+
+        Order savedOrder = orderRepository.save(order);
+
+        return new ResponseEntity<>(savedOrder, HttpStatus.CREATED);
+    }
 }

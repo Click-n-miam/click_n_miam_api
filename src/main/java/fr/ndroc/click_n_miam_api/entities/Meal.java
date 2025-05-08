@@ -27,7 +27,6 @@ public class Meal {
             joinColumns = @JoinColumn(name = "meal_id"),
             inverseJoinColumns = @JoinColumn(name = "ingredient_id")
     )
-    @JsonManagedReference
     private Set<Ingredient> ingredients;
 
     @Enumerated(EnumType.STRING)
